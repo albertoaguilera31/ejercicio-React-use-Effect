@@ -44,4 +44,7 @@
   color: #444;
 }
 
-
+.label-green{
+  background-color: rgb(38, 233, 38);
+  color: white;
+}
