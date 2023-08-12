@@ -42,7 +42,7 @@ export const PruebasComponent = () => {
         <button onClick={cambiarFecha}>Cambiar Fecha</button>
         </p>
 
-        {contador >= 15 && <AvisoComponent/>}
+        {usuario == "Alberto" && <AvisoComponent/>}
 
     </div>
   )
