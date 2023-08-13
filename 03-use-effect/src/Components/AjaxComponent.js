@@ -87,8 +87,5 @@ export const AjaxComponent = () => {
   );
 
   }
-
- 
-
   
 };
