@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes, Route, Link, BrowserRouter} from 'react-router-dom';
+import {Routes, Route, BrowserRouter, NavLink} from 'react-router-dom';
 import { Inicio } from '../components/Inicio';
 import { Articulos } from '../components/Articulos';
 import { Contacto } from '../components/Contacto';
@@ -12,7 +12,32 @@ export const RouterPrincipal = () => {
 
       <h1>cabecera</h1>
       <hr/>
-      <h2>menu</h2>
+      
+      <nav>
+        <ul>
+          <li>
+            <NavLink 
+            to="/inicio"
+            className={({isActive})=> isActive ? "activado": ""}>
+              Inicio
+              </NavLink>
+          </li>
+          <li>
+          <NavLink 
+          to="/articulos"
+          className={({isActive})=> isActive ? "activado": ""}>
+            Articulos
+            </NavLink>
+          </li>
+          <li>
+          <NavLink 
+          to="/contacto"
+          className={({isActive})=> isActive ? "activado": ""}>
+            Contacto
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
       <hr/>
 
       <section className='contenido-principal'>
