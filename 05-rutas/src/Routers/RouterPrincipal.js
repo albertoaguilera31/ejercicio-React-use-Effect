@@ -1,9 +1,11 @@
 import React from 'react'
-import {Routes, Route, BrowserRouter, NavLink} from 'react-router-dom';
+import {Routes, Route, BrowserRouter, NavLink, Navigate} from 'react-router-dom';
 import { Inicio } from '../components/Inicio';
 import { Articulos } from '../components/Articulos';
 import { Contacto } from '../components/Contacto';
 import { Error } from '../components/Error';
+import { Persona } from '../components/Persona';
+import { PanelControl } from '../components/PanelControl';
 
 
 export const RouterPrincipal = () => {
@@ -36,6 +38,13 @@ export const RouterPrincipal = () => {
             Contacto
             </NavLink>
           </li>
+          <li>
+          <NavLink 
+          to="/panel"
+          className={({isActive})=> isActive ? "activado": ""}>
+            Panel de control
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <hr/>
@@ -46,6 +55,9 @@ export const RouterPrincipal = () => {
             <Route path='/inicio' element={<Inicio/>}/>
             <Route path='/articulos' element={<Articulos/>}/>
             <Route path='/contacto' element={<Contacto/>}/>
+            <Route path='/persona/:nombre/:apellido' element={<Persona/>}/>
+            <Route path='/redirigir' element={<Navigate to="/persona/Alberto/Aguilera"/>}/>
+            <Route path='/panel' element={<PanelControl/>}/>
             <Route path='*' element={<Error/>}/>
         </Routes>
         </section>
