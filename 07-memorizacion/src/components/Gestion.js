@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Empleados } from './Empleados'
 
 export const Gestion = () => {
@@ -15,6 +15,10 @@ export const Gestion = () => {
     console.log("vista gestion actualizada!")
   }, [nombre, pagina])
 
+  const mostrarMensaje= useCallback(()=>{
+    console.log("hola, soy un mensaje desde el componente empleados!!");
+  }, [pagina]);
+
   return (
     <div>
         <h1>Nombre del gestor: {nombre}</h1>
@@ -25,7 +29,7 @@ export const Gestion = () => {
         <button onClick={()=>{ setPagina(1) }}>Página 1</button >
         <button onClick={()=>{ setPagina(2) }}>Página 2</button>
 
-        <Empleados pagina={pagina}/>
+        <Empleados pagina={pagina} mensaje={mostrarMensaje}/>
     </div>
   )
 }
